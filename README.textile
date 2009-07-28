@@ -1,0 +1,42 @@
+h1. PowerDNS on Rails Nettica Plugin
+
+Simple plugins for PowerDNS on Rails that creates and deletes secondary zones from "Nettica's":http://www.nettica.com domain service.
+
+More information:
+
+* The README (this file)
+* "Home page":http://github.com/jjohnsen
+
+h2. Requirements
+
+This plugin requires the following gems:
+
+* "Nettica":http://github.com/wr0ngway/nettica/tree/master
+* "LibIDN Ruby Bindings":http://idn.rubyforge.org
+
+h2. Quick Installation
+
+You need a version of PowerDNS on Rails that supports hooks
+
+h3. PowerDNS on Rails Installation (with hooks)
+
+# $ git clone git://github.com/jjohnsen/powerdns-on-rails.git
+# $ cd powerdns-on-rails
+# Review config/database.yml and modify as needed
+# $ rake db:migrate
+# $ rake db:seed
+# $ ruby script/server
+# Point your browser to http://localhost:3000
+# Login with 'admin' and 'secret'
+
+Please checkout http://github.com/kennethkalmer/powerdns-on-rails/tree/master for more information about PowerDNS on Rails
+
+h3. Powerdns Nettica Plugin Installation
+
+# $ cd powerdns-on-rails
+# Review config/database.yml and modify as needed
+
+h2. Testing
+
+The tests are done against a live nettica account.
+You need to supply NS_PRIMARY and NS_PRIMARY_IP with real valuesin test/powerdns_nettica_test.rb and add nettica-username and nettica-password ot lib/powerdns_nettica.rb
