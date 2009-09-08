@@ -31,7 +31,7 @@ module PowerdnsNettica
 			
 			# Resolv ip for primary_ns as nettica requires this
 			begin
-				ipAddress = Resolv.getaddress domain.primary_ns
+				ipAddress = Resolv::DNS.new.getaddress(domain.primary_ns).to_s
 			rescue
 				domain.errors.add_to_base("Could not resolve primary name server")
 				return false
